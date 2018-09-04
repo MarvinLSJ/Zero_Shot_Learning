@@ -5,5 +5,5 @@ Model for ZhijiangLab Cup
 
 #### Explanation File: tag_prediction.ipynb
 
-#### Substitute "train" "test" image folder in data/0813/..
+#### Replace "train" "test" image folder in data/0813/..
 
