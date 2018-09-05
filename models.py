@@ -1,7 +1,7 @@
 import torch
 from keras.layers import concatenate
 from keras.applications.xception import Xception
-from keras.layers import Input, Dense, GlobalAveragePooling2D
+from keras.layers import Input, Dense, GlobalAveragePooling2D, GlobalMaxPooling2D
 from keras.models import Model
 
 from keras.applications.inception_v3 import InceptionV3
@@ -129,7 +129,10 @@ def img_feature_model():
 
     x = base_model.output
     x = GlobalAveragePooling2D()(x)
+    #x = GlobalMaxPooling2D()(x)
     # Out to match semantic size
+    #x = Dense(1024, activation='relu')(x)
+    #x = Dense(512, activation='relu')(x)
     img_out = Dense(300)(x)
 
     model = Model(inputs=base_model.input,
